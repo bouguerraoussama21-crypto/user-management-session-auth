@@ -5,10 +5,10 @@ A comprehensive Spring Boot application implementing session-based authenticatio
 This project demonstrates secure user management with admin and user roles, built using Spring Security, Spring Data JPA, Thymeleaf, and Bootstrap.
 
 --------------------------------------------------------------------------
-##Features:
+#Features:
 --------------------------------------------------------------------------
 
-###Authentication & Authorization:
+#Authentication & Authorization:
 --------------------------------------------------------------------------
 
 -Session-based authentication with Spring Security
@@ -17,7 +17,7 @@ This project demonstrates secure user management with admin and user roles, buil
 -Custom login and registration pages
 
 --------------------------------------------------------------------------
-####User Management:
+#User Management:
 --------------------------------------------------------------------------
 
 -Complete CRUD operations for users
@@ -28,7 +28,7 @@ This project demonstrates secure user management with admin and user roles, buil
 -Role assignment
 
 --------------------------------------------------------------------------
-#####Security Features:
+#Security Features:
 --------------------------------------------------------------------------
 
 CSRF protection
@@ -37,30 +37,30 @@ Form validation
 Error handling 
 
 ---------------------------------------------------------------
-######Screenshots:
+#Screenshots:
 --------------------------------------------------------------------------
 
 Login Page
 ![Login Page](screenshots/login.png)
-
+----------------------------------
 Login Error
 ![Login Page](screenshots/login1.png)
-
+----------------------------------
 Registration Page
 ![Register Page](screenshots/signup.png)
-
+----------------------------------
 Admin Dashboard
 ![Dashboard admin Page](screenshots/admin_dash.png)
-
+----------------------------------
 User Dashboard
 ![Dashboard user Page](screenshots/user_dash.png)
-
+----------------------------------
 User Management
 ![User Management Page](screenshots/admin_manage_user.png)
-
+----------------------------------
 User Details
 ![User Details Page](screenshots/user_details.png)
-
+----------------------------------
 Change Password
 ![Change Password Page](screenshots/user_change_password.png)
 
