@@ -1,19 +1,24 @@
-#Spring Security User Management
+#SpringSecurityUserManagement
+--------------------------------------------------------------------------
 
 A comprehensive Spring Boot application implementing session-based authentication with role-based access control. 
 This project demonstrates secure user management with admin and user roles, built using Spring Security, Spring Data JPA, Thymeleaf, and Bootstrap.
 
 --------------------------------------------------------------------------
 ##Features:
+--------------------------------------------------------------------------
+
 ###Authentication & Authorization:
+--------------------------------------------------------------------------
 
 -Session-based authentication with Spring Security
 -Role-based access control (ROLE_USER, ROLE_ADMIN)
 -Secure password encryption with BCrypt
 -Custom login and registration pages
 
-
+--------------------------------------------------------------------------
 ####User Management:
+--------------------------------------------------------------------------
 
 -Complete CRUD operations for users
 -User registration with validation
@@ -22,14 +27,19 @@ This project demonstrates secure user management with admin and user roles, buil
 -Account enable/disable functionality
 -Role assignment
 
+--------------------------------------------------------------------------
 #####Security Features:
+--------------------------------------------------------------------------
 
 CSRF protection
 Password hashing 
 Form validation
 Error handling 
+
 ---------------------------------------------------------------
 ######Screenshots:
+--------------------------------------------------------------------------
+
 Login Page
 ![Login Page](screenshots/login.png)
 
