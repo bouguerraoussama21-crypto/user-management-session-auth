@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head}">
+  <title>Update User</title>
+</head>
+<body>
+<nav th:replace="~{fragments/layout :: navbar}"></nav>
+
+<div class="container mt-5 mb-5">
+  <div class="row mb-4">
+    <div class="col-lg-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/admin/users}">Users</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Update User</li>
+        </ol>
+      </nav>
+      <h1 class="display-6">
+        <i class="bi bi-pencil-fill"></i> Update User
+      </h1>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow">
+        <div class="card-header bg-warning">
+          <h5 class="mb-0">Edit User Information</h5>
+        </div>
+        <div class="card-body">
+
+          <!-- Error messages -->
+          <div th:if="${error}" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <span th:text="${error}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+
+          <!-- Success message -->
+          <div th:if="${success}" class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle-fill"></i>
+            <span th:text="${success}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+
+          <form th:action="@{/admin/users/{id}/update(id=${userId})}"
+                th:object="${updateUserDTO}"
+                method="post">
+
+            <div class="alert alert-info" role="alert">
+              <i class="bi bi-info-circle-fill"></i>
+              <strong>Note:</strong> Username cannot be changed. To modify password, use the change password feature.
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName" class="form-label">
+                  <i class="bi bi-card-text"></i> First Name *
+                </label>
+                <input type="text"
+                       class="form-control"
+                       id="firstName"
+                       th:field="*{firstName}"
+                       th:classappend="${#fields.hasErrors('firstName')} ? 'is-invalid' : ''"
+                       required>
+                <div class="invalid-feedback" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="lastName" class="form-label">
+                  <i class="bi bi-card-text"></i> Last Name *
+                </label>
+                <input type="text"
+                       class="form-control"
+                       id="lastName"
+                       th:field="*{lastName}"
+                       th:classappend="${#fields.hasErrors('lastName')} ? 'is-invalid' : ''"
+                       required>
+                <div class="invalid-feedback" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">
+                <i class="bi bi-envelope-fill"></i> Email *
+              </label>
+              <input type="email"
+                     class="form-control"
+                     id="email"
+                     th:field="*{email}"
+                     th:classappend="${#fields.hasErrors('email')} ? 'is-invalid' : ''"
+                     required>
+              <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="roleName" class="form-label">
+                  <i class="bi bi-shield-fill-check"></i> Role *
+                </label>
+                <select class="form-select"
+                        id="roleName"
+                        th:field="*{roleName}"
+                        required>
+                  <option value="">-- Select Role --</option>
+                  <option value="ROLE_USER">User</option>
+                  <option value="ROLE_ADMIN">Admin</option>
+                </select>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label d-block">
+                  <i class="bi bi-toggle-on"></i> Account Status
+                </label>
+                <div class="form-check form-switch">
+                  <input class="form-check-input"
+                         type="checkbox"
+                         id="enabled"
+                         th:field="*{enabled}">
+                  <label class="form-check-label" for="enabled">
+                    Account Enabled
+                  </label>
+                </div>
+                <small class="text-muted">Uncheck to disable user account</small>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-end gap-2">
+              <a th:href="@{/admin/users}" class="btn btn-secondary">
+                <i class="bi bi-x-circle"></i> Cancel
+              </a>
+              <button type="submit" class="btn btn-warning">
+                <i class="bi bi-check-circle-fill"></i> Update User
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer th:replace="~{fragments/layout :: footer}"></footer>
+<div th:replace="~{fragments/layout :: scripts}"></div>
+</body>
+</html>
+
